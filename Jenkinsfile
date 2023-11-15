@@ -16,7 +16,7 @@ pipeline {
         stage('OWASP DependencyCheck') {
             steps {
                 // Make sure the OWASP Dependency Check plugin is installed and configured
-                dependencyCheck additionalArguments: '--format HTML --format XML', odcInstallation: 'Default'
+                dependencyCheck additionalArguments: '--format HTML --format XML', odcInstallation: 'OWASP DependencyCheck'
             }
         }
 

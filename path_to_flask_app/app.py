@@ -1,29 +1,34 @@
-from flask import Flask, render_template, request, redirect, url_for, escape
+from flask import Flask, request, redirect, url_for, escape, render_template
+import re
 
 app = Flask(__name__)
-
-def is_safe_input(input_value):
-    # Here you would implement checks for XSS and SQL Injection
-    # For now, we'll just return True to signify safe input
-    return True
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
         search_term = request.form['search']
-        if is_safe_input(search_term):
-            return redirect(url_for('search_results', query=search_term))
-        else:
-            # Clear input and reload the home page
+        sanitized_input = sanitize_input(search_term)
+        if is_sql_injection(sanitized_input):
+            # Redirect to home if SQL injection is detected
             return redirect(url_for('home'))
+        else:
+            # Go to results page if input is safe
+            return render_template('results.html', search_term=sanitized_input)
     return render_template('home.html')
 
-@app.route('/results')
-def search_results():
-    query = request.args.get('query', '')
-    # Escape the query to prevent XSS when displaying it
-    safe_query = escape(query)
-    return render_template('results.html', search_term=safe_query)
+def sanitize_input(data):
+    data = data.strip()  # Equivalent to PHP's trim
+    # stripslashes is not needed in Python as backslashes are not automatically added to quotes
+    data = escape(data)  # Equivalent to PHP's htmlspecialchars
+    return data
+
+def is_sql_injection(input_str):
+    # A basic check for some SQL keywords
+    sql_keywords = ["SELECT", "INSERT", "UPDATE", "DELETE", "DROP", "UNION", "WHERE", "OR", "AND"]
+    pattern = '|'.join(sql_keywords)  # Creates a regex pattern like 'SELECT|INSERT|UPDATE|...'
+    if re.search(pattern, input_str, re.IGNORECASE):
+        return True
+    return False
 
 if __name__ == '__main__':
     app.run(debug=True)

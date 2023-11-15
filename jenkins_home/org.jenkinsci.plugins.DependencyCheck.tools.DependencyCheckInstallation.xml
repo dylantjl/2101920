@@ -1,0 +1,17 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<org.jenkinsci.plugins.DependencyCheck.tools.DependencyCheckInstallation_-DescriptorImpl plugin="dependency-check-jenkins-plugin@5.4.3">
+  <installations class="org.jenkinsci.plugins.DependencyCheck.tools.DependencyCheckInstallation-array">
+    <org.jenkinsci.plugins.DependencyCheck.tools.DependencyCheckInstallation>
+      <name>OWASP DependencyCheck</name>
+      <properties>
+        <hudson.tools.InstallSourceProperty>
+          <installers>
+            <org.jenkinsci.plugins.DependencyCheck.tools.DependencyCheckInstaller>
+              <id>8.4.2</id>
+            </org.jenkinsci.plugins.DependencyCheck.tools.DependencyCheckInstaller>
+          </installers>
+        </hudson.tools.InstallSourceProperty>
+      </properties>
+    </org.jenkinsci.plugins.DependencyCheck.tools.DependencyCheckInstallation>
+  </installations>
+</org.jenkinsci.plugins.DependencyCheck.tools.DependencyCheckInstallation_-DescriptorImpl>
