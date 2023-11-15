@@ -13,12 +13,12 @@ services:
       - ./jenkins_home:/var/jenkins_home
 
   webapp:
-    build: ./webapp  # Update this path to the actual location of your Flask Dockerfile
+    build: ./path_to_flask_app
     container_name: webapp
     ports:
-      - "80:5000"  # This forwards the host's port 80 to the container's port 5000
+      - "80:5000"
     volumes:
-      - ./webapp:/app  # Update this path if necessary
+      - ./path_to_flask_app:/app
 
   git:
     container_name: gitea
@@ -28,8 +28,8 @@ services:
       - USER_GID=1000
     restart: always
     ports:
-      - "3000:3000"  # Gitea web interface
-      - "2222:22"    # SSH access to repositories
+      - "3000:3000"
+      - "2222:22"
     volumes:
       - ./gitea:/data
 
