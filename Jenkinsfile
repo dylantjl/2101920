@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout SCM') {
             steps {
                 // Adjust this to match the location of your repository
-                git url: 'url-to-your-git-repo', branch: 'main'
+                git url: 'https://github.com/dylantjl/2101920.git', branch: 'main'
             }
         }
 
