@@ -44,7 +44,13 @@
       <flags/>
     </jenkins.model.experimentalflags.UserExperimentalFlagsProperty>
     <hudson.security.HudsonPrivateSecurityRealm_-Details>
-      <passwordHash>#jbcrypt:$2a$10$YHSvfr2nTlFtKlFmCSoUcekWqWun1o3vvFAvW3fHWY9XzwN0l5HZe</passwordHash>
+      <passwordHash>#jbcrypt:$2a$10$JsRsoaTHup/DfcQRDmk6KOML1TtOHojKrrFGVZwMpVMf21A6TTUZu</passwordHash>
     </hudson.security.HudsonPrivateSecurityRealm_-Details>
+    <jenkins.security.LastGrantedAuthoritiesProperty>
+      <roles>
+        <string>authenticated</string>
+      </roles>
+      <timestamp>1700042425134</timestamp>
+    </jenkins.security.LastGrantedAuthoritiesProperty>
   </properties>
 </user>
