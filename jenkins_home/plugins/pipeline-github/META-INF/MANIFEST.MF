@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Created-By: Maven Archiver 3.6.0
+Build-Jdk-Spec: 11
+Specification-Title: Pipeline: GitHub
+Specification-Version: 2.8
+Implementation-Title: Pipeline: GitHub
+Implementation-Version: 2.8-155.8eab375ac9f8
+Group-Id: org.jenkins-ci.plugins
+Short-Name: pipeline-github
+Long-Name: Pipeline: GitHub
+Url: https://github.com/jenkinsci/pipeline-github-plugin
+Plugin-Version: 2.8-155.8eab375ac9f8
+Hudson-Version: 2.375.3
+Jenkins-Version: 2.375.3
+Plugin-Dependencies: workflow-cps:3653.v07ea_433c90b_4,workflow-job:1289
+ .vd1c337fd5354,credentials:1224.vc23ca_a_9a_2cb_0,github-branch-source:
+ 1703.vd5a_2b_29c6cdc,jackson2-api:2.13.3-285.vc03c0256d517
+Plugin-Developers: 
+Plugin-License-Name: MIT License
+Plugin-License-Url: http://opensource.org/licenses/MIT
+Plugin-ScmUrl: https://github.com/jenkinsci/pipeline-github-plugin
+

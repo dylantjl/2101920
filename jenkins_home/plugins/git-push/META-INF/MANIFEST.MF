@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Hudson-Version: 2.263.1
+Plugin-Dependencies: git:4.8.1,matrix-project:1.18;resolution:=optiona
+ l
+Implementation-Title: git-push
+Long-Name: Git Push Plugin
+Implementation-Version: 34.vd474e0fe7b_ec
+Group-Id: io.jenkins.plugins
+Minimum-Java-Version: 1.8
+Plugin-License-Name: MIT License
+Specification-Title: The Jenkins Plugins Parent POM Project
+Plugin-ScmUrl: https://github.com/jenkinsci/git-push-plugin
+Plugin-Version: 34.vd474e0fe7b_ec
+Jenkins-Version: 2.263.1
+Url: https://github.com/jenkinsci/git-push-plugin
+Short-Name: git-push
+Plugin-License-Url: https://opensource.org/licenses/MIT
+Plugin-Developers: Réda Housni Alaoui:reda-alaoui:reda-alaoui@hey.com
+Extension-Name: git-push
+Build-Jdk-Spec: 1.8
+Created-By: Maven Archiver 3.5.1
+
