@@ -51,6 +51,17 @@ pipeline {
                 }
             }
         }
+
+        stage('Code Quality Check via SonarQube') {
+            steps {
+                script {
+                    def scannerHome = tool 'SonarQube'
+                    withSonarQubeEnv('SonarQube') {
+                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=dylan2101920 -Dsonar.sources=. -Dsonar.host.url=http://172.23.0.5:9000"
+                    }
+                }
+            }
+        }
     }
     
     post {
