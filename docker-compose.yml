@@ -11,12 +11,14 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./jenkins_home:/var/jenkins_home
-  
+
   webapp:
+    build: ./webapp  # Update this path to the actual location of your Flask Dockerfile
     container_name: webapp
-    build: ./webapp
     ports:
-      - "80:80"
+      - "80:5000"  # This forwards the host's port 80 to the container's port 5000
+    volumes:
+      - ./webapp:/app  # Update this path if necessary
 
   git:
     container_name: gitea
