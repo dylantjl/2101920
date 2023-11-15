@@ -18,6 +18,19 @@ services:
     ports:
       - "80:80"
 
+  git:
+    container_name: gitea
+    image: gitea/gitea:latest
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    ports:
+      - "3000:3000"  # Gitea web interface
+      - "2222:22"    # SSH access to repositories
+    volumes:
+      - ./gitea:/data
+
 volumes:
   jenkins_data:
     driver: local
